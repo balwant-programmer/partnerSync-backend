@@ -11,11 +11,7 @@ dotenv.config();
 
 const app = express();
 app.use(cookieParser());
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://192.168.43.86:5173",
-  "http://192.168.84.234:5173",
-];
+const allowedOrigins = ["https://partner-sync.netlify.app"];
 
 app.use(
   cors({
