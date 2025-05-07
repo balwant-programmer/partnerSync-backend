@@ -63,7 +63,7 @@ export const verifyAdminOtp = async (req, res) => {
         const token = generateToken(createAdmin._id);
         res.cookie("token", token, {
           httOnly: true,
-          secure: process.env.NODE_ENV === "production",
+          secure: true,
           samesite: "none",
           maxAge: 2 * 60 * 60 * 1000,
         });
@@ -123,7 +123,7 @@ export const adminLogout = async (req, res) => {
   try {
     res.clearCookie("token", {
       httOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: true,
       samesite: "none",
     });
 
