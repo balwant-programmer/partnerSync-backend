@@ -64,7 +64,7 @@ export const verifyAdminOtp = async (req, res) => {
         res.cookie("token", token, {
           httOnly: true,
           secure: true,
-          samesite: "none",
+          sameSite: "none",
           maxAge: 2 * 60 * 60 * 1000,
         });
         return res
