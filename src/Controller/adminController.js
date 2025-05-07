@@ -49,8 +49,8 @@ export const verifyAdminOtp = async (req, res) => {
         const token = generateToken(record._id);
         res.cookie("token", token, {
           httOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          samesite: "none",
+          secure: true,
+          sameSite: "none",
           maxAge: 2 * 60 * 60 * 1000,
         });
       } else {
