@@ -124,7 +124,7 @@ export const adminLogout = async (req, res) => {
     res.clearCookie("token", {
       httOnly: true,
       secure: true,
-      samesite: "none",
+      sameSite: "none",
     });
 
     return res.status(200).json({ message: "Logout successful" });
